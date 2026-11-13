@@ -4,8 +4,10 @@ import {
   updateLocalReport,
 } from "../db/database";
 
-const API = "http://localhost:5000/api/reports";
-
+const API =
+  import.meta.env.VITE_API_URL ||
+  "http://localhost:5000/api/reports";
+  
 let isSyncing = false;
 
 export async function synchronizeReports() {
